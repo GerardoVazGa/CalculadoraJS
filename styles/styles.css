@@ -19,3 +19,21 @@ body{
     background-color: rgb(53, 179, 211);
 }
 
+.btnErase, .btnClear, .btnPercent{
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    grid-row: 2;
+}
+
+.btnOp1, .btnOp2, .btnOp3, .btnOp4, .btnOp5{
+    background-color: grey;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+
+}
+
