@@ -52,4 +52,19 @@ function crearBtns(){
 
 }
 
+function textArea(){
+    let container = document.querySelector(".container")
+
+    let textArea = document.createElement("textarea")
+    textArea.classList.add("display")
+
+    textArea.disabled = true
+
+    container.appendChild(textArea)
+
+
+    
+}
+
+textArea()
 crearBtns()
