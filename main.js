@@ -51,3 +51,5 @@ function crearBtns(){
     }
 
 }
+
+crearBtns()
