@@ -19,6 +19,15 @@ body{
     background-color: rgb(53, 179, 211);
 }
 
+.container .display{
+    text-align: right;
+    font-size: 20px;
+    grid-column: 1/5;
+    grid-row: 1;
+    background-color: beige;
+}
+
+
 .btnErase, .btnClear, .btnPercent{
     background-color: gray;
     color: white;
