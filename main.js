@@ -37,4 +37,17 @@ function crearBtns(){
         }
 
     }
+
+    // Operators button and result
+    let operators = ["+", "-", "*",  "/", "="]
+    let i = 1
+    for(let op of operators){
+        let btnOp = document.createElement("button")
+        btnOp.classList.add(`btnOp${i}`)
+        btnOp.textContent = op
+
+        container.appendChild(btnOp)
+        i++
+    }
+
 }
