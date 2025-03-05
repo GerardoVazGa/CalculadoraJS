@@ -68,3 +68,40 @@ function textArea(){
 
 textArea()
 crearBtns()
+
+let container = document.querySelector(".container")
+
+container.addEventListener("click", (event) =>{
+    let display = document.querySelector(".display")
+    if(event.target.tagName === "BUTTON"){
+        console.log(event.target.textContent)
+
+        //Clear Event
+        if(event.target.textContent === "C"){
+            display.textContent = ""
+            return
+        }
+
+        // Equal or Result Event
+        if(event.target.textContent === "="){
+            
+        }
+
+        // Delete operation Event 
+        if(event.target.textContent === "Delete"){
+            if(display.textContent.length > 0){
+                display.textContent = display.textContent.slice(0, -1)
+            }
+            return
+        }
+
+        // Percent Event
+        if(event.target.textContent === "%"){
+            let procentVal = parseFloat(display.textContent)
+            display.textContent = procentVal / 100
+            return
+        }
+        display.textContent += event.target.textContent
+    }
+
+})
