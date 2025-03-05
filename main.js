@@ -84,7 +84,8 @@ container.addEventListener("click", (event) =>{
 
         // Equal or Result Event
         if(event.target.textContent === "="){
-            
+            resultado(display.textContent)
+            return
         }
 
         // Delete operation Event 
@@ -105,3 +106,14 @@ container.addEventListener("click", (event) =>{
     }
 
 })
+
+// Operation Result
+let resultado = (operacion) =>{
+    try{
+        let display = document.querySelector(".display")
+        let result = eval(operacion)
+        display.textContent = result
+    }catch{
+        display.textContent = "Error"
+    }
+}
