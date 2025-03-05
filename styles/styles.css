@@ -46,3 +46,19 @@ body{
 
 }
 
+.btnOp5{
+    background-color: rgba(241, 46, 46, 0.911);
+}
+
+.btn0, .btn1, .btn2, 
+.btn3, .btn4, .btn5, 
+.btn6, .btn7, .btn8,
+.btn9, .btn10, .btn11{
+    background-color: darkslategrey;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 70px;
+    
+}
+
