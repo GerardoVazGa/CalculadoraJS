@@ -62,3 +62,20 @@ body{
     
 }
 
+.btn0, .btn1, .btn2 {
+    grid-row: 5;
+}
+
+.btn3, .btn4, .btn5 {
+    grid-row: 4;
+}
+
+
+.btn6, .btn7, .btn8 {
+    grid-row: 3;
+}
+
+.btn9, .btn10, .btn11 {
+    grid-row: 6;
+}
+
