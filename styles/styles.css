@@ -76,3 +76,48 @@ body{
     grid-row: 6;
 }
 
+@media (width <= 320px) {
+    .container .display {
+        grid-column: 1 / -1;
+    }
+
+    .btnErase, .btnClear, .btnPercent,
+    .btnOp1, .btnOp2, .btnOp3, .btnOp4, .btnOp5,
+    .buttons {
+        width: 50px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (width >= 320px) and (width <= 425px) {
+    .container .display {
+        grid-column: 1 / -1;
+    }
+
+    .btnErase, .btnClear, .btnPercent,
+    .btnOp1, .btnOp2, .btnOp3, .btnOp4, .btnOp5,
+    .buttons {
+        width: 60px;
+        font-size: 1rem;
+    }
+}
+
+body {
+    background: linear-gradient(300deg, #00bfff, #059adfb4, #2457e6);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
