@@ -56,10 +56,9 @@ function textArea(){
     textArea.classList.add("display")
 
     textArea.disabled = true
+    textArea.placeholder = "0"
 
     container.appendChild(textArea)
-
-
     
 }
 
@@ -68,8 +67,47 @@ crearBtns()
 
 let container = document.querySelector(".container")
 
+container.addEventListener('keydown', (event) => {
+    let display = document.querySelector(".display")
+    event.preventDefault() // Prevent default behavior of keydown
+
+    if(/^[0-9+\-*/.]+$/.test(event.key)) {
+        display.textContent += event.key;
+        return;
+    }
+
+    switch(event.key) {
+        case 'Backspace':
+        case 'Delete':
+            if(display.textContent.length > 0){
+                display.textContent = display.textContent.slice(0, -1)
+            }
+            break;
+        case 'Enter':
+        case '=':
+            resultado(display.textContent)
+            break;
+        case 'Escape':
+        case 'C':
+            display.textContent = ""
+            break;
+        case '%':
+            let procentVal = parseFloat(display.textContent)
+            display.textContent = procentVal / 100
+            break;
+        case '.':
+            if(!display.textContent.includes('.')) {
+                display.textContent += '.'
+            }
+            break;
+        default:
+            break
+    }
+})
+
 container.addEventListener("click", (event) =>{
     let display = document.querySelector(".display")
+    console.log(event)
     if(event.target.tagName === "BUTTON"){
         console.log(event.target.textContent)
 
