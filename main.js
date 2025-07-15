@@ -25,7 +25,7 @@ function crearBtns(){
     ]
 
     newContent.forEach((item) => {
-        generateButtons([item.class, 'buttons'], item.content, item.class)
+        generateButtons([item.class, 'buttons'], item.content)
     })
 
     
@@ -33,18 +33,13 @@ function crearBtns(){
     // Operators button and result
     let operators = ["+", "-", "*",  "/", "="]
     let i = 1
-    for(let op of operators){
-        let btnOp = document.createElement("button")
-        btnOp.classList.add(`btnOp${i}`)
-        btnOp.textContent = op
-
-        container.appendChild(btnOp)
-        i++
+    for(let [index, op] of operators.entries()){
+        generateButtons([`btnOp${index + 1}`], op)
     }
 
 }
 
-function generateButtons(classesList, content, id = null)  {
+function generateButtons(classesList, content, id = "")  {
     let container = document.querySelector(".container")
     let newButton  = document.createElement("button");
     newButton.classList.add(...classesList)
