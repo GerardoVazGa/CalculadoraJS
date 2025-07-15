@@ -1,40 +1,32 @@
 function crearBtns(){
     let container = document.querySelector(".container")
-    let btnsCe = ["btnErase", "btnClear", "btnPercent"]
 
-    for(let i = 0; i < btnsCe.length; i++){
-        let btnCleErPer = document.createElement("button")
-        btnCleErPer.classList.add(btnsCe[i])
+    // Clear, Delete and Percent buttons
+    const btnsCe = [
+        {class: "btnErase", content: "C"},
+        {class: "btnClear", content: "Delete"},
+        {class: "btnPercent", content: "%"}
+    ]
 
-        if(btnCleErPer.classList.contains(btnsCe[0])){
-            btnCleErPer.textContent = "C"
-        }else if(btnCleErPer.classList.contains(btnsCe[1])){
-            btnCleErPer.textContent = "Delete"
-        }else{
-            btnCleErPer.textContent = "%"
-        }
+    btnsCe.forEach((btnCe) => {
+        generateButtons([btnCe.class], btnCe.content)
+    })
 
-        container.appendChild(btnCleErPer)
-    }
-           // Number buttons
-    for(let i = 0; i < 12; i++){
-        let button = document.createElement("button")
-        button.classList.add(`btn${i}`)
-        let textButton = document.createTextNode(i+1)
-    
-        button.appendChild(textButton)
-
-        container.appendChild(button)
+    // Number buttons
+    for(let i = 1; i < 10; i++){
+        generateButtons([`btn${i}`, 'buttons'], i, `btn${i}`)
     }
 
-    let lastBtnNumbers = ["9", "10", "11"]
-    let newContent = ["00", 0, "."]
-    for(let i = 0; i < lastBtnNumbers.length; i++){
-        let button = document.querySelector(`.btn${lastBtnNumbers[i]}`);
-        if (button) {
-            button.textContent = newContent[i];
-        }
-    }
+
+    let newContent = [
+        {class: "btn00", content: "00"},
+        {class: "btn0", content: 0},
+        {class: "btndot", content: "."} 
+    ]
+
+    newContent.forEach((item) => {
+        generateButtons([item.class, 'buttons'], item.content, item.class)
+    })
 
     
 
@@ -50,6 +42,16 @@ function crearBtns(){
         i++
     }
 
+}
+
+function generateButtons(classesList, content, id = null)  {
+    let container = document.querySelector(".container")
+    let newButton  = document.createElement("button");
+    newButton.classList.add(...classesList)
+    newButton.id = id;
+    newButton.textContent = content
+
+    container.appendChild(newButton)
 }
 
 function textArea(){
